@@ -4,14 +4,16 @@
 $light-background: #fff;
 $light-background-secondary: #eaeaea;
 $light-color: #222;
-$light-color-secondary: #999;
+$light-color-secondary: #EEE;
 $light-border-color: #dcdcdc;
 
 /* dark theme colors */
-$dark-background: #292a2d;
-$dark-background-secondary: #3b3d42;
-$dark-color: #a9a9b3;
+$dark-background: #000;
+$dark-background-secondary: #000;
+$dark-color: #EEE;
 $dark-color-secondary: #73747b;
+// $dark-color: #EEE;
+// $dark-color-secondary: #EEE;
 $dark-border-color: #4a4b50;
 
 $media-size-phone: "(max-width: 684px)";

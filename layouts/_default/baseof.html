@@ -4,7 +4,15 @@
         {{ partial "head.html" . }}
     </head>
 
-    <body class="{{ if ne $.Site.Params.defaultTheme "light" -}} dark-theme {{- end -}}">
+    {{ $cssClass := "" }}
+    {{ if ne $.Site.Params.defaultTheme "light" }}
+        {{ $cssClass := "dark-theme" }}
+    {{ end }}
+    {{ if .IsHome }}
+        {{ $cssClass = print $cssClass "home" }}
+    {{ end }}
+
+    <body class="{{ $cssClass }}">
         <div class="container">
             {{ partial "header.html" . }}
 
