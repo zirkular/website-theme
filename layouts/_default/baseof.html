@@ -4,12 +4,12 @@
         {{ partial "head.html" . }}
     </head>
 
-    {{ $cssClass := "" }}
-    {{ if ne $.Site.Params.defaultTheme "light" }}
+    {{ $cssClass := "dark-theme" }}
+    {{/*  {{ if ne $.Site.Params.defaultTheme "light" }}
         {{ $cssClass := "dark-theme" }}
-    {{ end }}
+    {{ end }}  */}}
     {{ if .IsHome }}
-        {{ $cssClass = print $cssClass "home" }}
+        {{ $cssClass = print $cssClass " " "home" }}
     {{ end }}
 
     <body class="{{ $cssClass }}">

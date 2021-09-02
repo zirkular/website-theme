@@ -1,4 +1,18 @@
 .home {
-    background: url(../image/home/main_inv_darkest.png) bottom left;
-    // filter: opacity(0.5)
+    // background: url(../image/home/main_inv_darkest.png) bottom left;
+    background: url(../image/home/main_dark.png) bottom left;
+    // filter: blur(1px);
+    // animation-duration: 3s;
+    // animation-name: pulse;
+    // animation-iteration-count: infinite;
 }
+
+@keyframes pulse {
+    from {
+        background: url(../image/home/main_inv_darkest.png) bottom left;
+    }
+  
+    to {
+        background: url(../image/home/main_dark.png) bottom left;
+    }
+  }

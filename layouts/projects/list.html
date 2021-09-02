@@ -18,11 +18,11 @@
 
             <div class="timeline-content js--fadeInLeft">
                 <h2><a href="{{ .Permalink }}"><span class="post-title">{{.Title}}</span></a></h2>
-                <div class="date">{{ .Date.Format "Jan 2006"}}</div>
+                {{/*  <div class="date">{{ .Date.Format "Jan 2006"}}</div>  */}}
                 <p>
                     {{ .Params.Description }}<br><br>
                     {{ with .Params.Collab }}
-                        <span class="italic">In collaboration w/ {{ . }}</span>
+                        <span class="italic">w/ {{ . }}</span>
                     {{ end }}
                     {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }}
                         <ul class="tag-list">

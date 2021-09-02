@@ -1,6 +1,6 @@
-$primary: #3F51B5;
+$primary: #EEE;
 $dark-primary: #303F9F;
-$light-primary: #C5CAE9;
+$light-primary: #EEE;
 $text: #FFFFFF;
 $primary-text: #212121;
 $secondary-text: #757575;
@@ -10,6 +10,7 @@ $accent: #FF4081;
 	list-style-type: none;
 	margin-left: 0;
 	padding-left: 0;
+	display: block;
 }
 
 .tag-label {
@@ -47,29 +48,22 @@ section {
 
 .timeline-item {
 	width: 100%;
-	margin-bottom: 70px;
+	// margin-bottom: 70px;
+	margin-bottom: random(100) + px;
+	
+	position: relative;
 
 	&:nth-child(even) {
 
 		.timeline-content {
 			float: right;
-			padding: 40px 30px 10px 30px;
+			// padding: 40px 30px 10px 30px;`
+			// margin-top: random(10) * -1 + px;
+			// margin-top: -100px;
 
 			.date {
 				right: auto;
 				left: 0;
-			}
-
-			&::after {
-				content: '';
-				position: absolute;
-				border-style: solid;
-				width: 0;
-				height: 0;
-				top: 30px;
-				left: -15px;
-				border-width: 10px 15px 10px 0;
-				border-color: transparent #f5f5f5 transparent transparent;
 			}
 		}
 	}
@@ -98,21 +92,17 @@ section {
 .timeline-content {
 	position: relative;
 	width: 45%;
+	top: -10px;
+	// padding: 10px 30px;
 	padding: 10px 30px;
+	// min-height: 230px;
 	border-radius: 4px;
 	// background: #f5f5f5;
-	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
+	// box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
 
-	&::after {
-		content: '';
-		position: absolute;
-		border-style: solid;
-		width: 0;
-		height: 0;
-		top: 30px;
-		right: -15px;
-		border-width: 10px 0 10px 15px;
-		border-color: transparent transparent transparent #f5f5f5;
+	.tag-list {
+		height: 50px;
+		border-bottom: 1px grey dashed;
 	}
 }
 
@@ -211,17 +201,6 @@ blockquote {
 
 				.timeline-content {
 					
-					&::after {
-						content: '';
-						position: absolute;
-						border-style: solid;
-						width: 0;
-						height: 0;
-						top: 30px;
-						left: -15px;
-						border-width: 10px 15px 10px 0;
-						border-color: transparent #f5f5f5 transparent transparent;
-					}
 				}
 
 			}
