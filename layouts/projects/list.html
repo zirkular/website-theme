@@ -17,12 +17,22 @@
             <div class="timeline-img"></div>
 
             <div class="timeline-content js--fadeInLeft">
-                <h2><a href="{{.Permalink}}"><span class="post-title">{{.Title}}</span></a></h2>
-                <div class="date">{{ .Date.Format "Jan 2, 2006"}}</div>
+                <h2><a href="{{ .Permalink }}"><span class="post-title">{{.Title}}</span></a></h2>
+                <div class="date">{{ .Date.Format "Jan 2006"}}</div>
                 <p>
-                    {{.Params.Eventname}}<br>
-                    {{.Params.Eventlocation}}
-
+                    {{ .Params.Description }}<br><br>
+                    {{ with .Params.Collab }}
+                        <span class="italic">In collaboration w/ {{ . }}</span>
+                    {{ end }}
+                    {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }}
+                        <ul class="tag-list">
+                        {{ range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+                        <li>
+                            <a href="{{ .Permalink }}" class="tag-label">{{ $tag | urlize }}</a>
+                        </li>
+                        {{- end -}} {{- end -}}
+                        </ul>
+                    {{ end }}
                 </p> 
             </div>
         </div>  

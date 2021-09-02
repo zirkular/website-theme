@@ -6,10 +6,24 @@ $primary-text: #212121;
 $secondary-text: #757575;
 $accent: #FF4081;
 
+.tag-list {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.tag-label {
+	float: left;
+	margin-right: 1rem;
+}
 
 .hero-table { 
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.italic {
+	font-style: italic;
 }
 
 section {
@@ -60,6 +74,19 @@ section {
 		}
 	}
 
+	@media #{$media-size-phone} {
+		&:nth-child(odd) {
+			.timeline-content {
+				float: left;
+
+				.date {
+					right: auto;
+					left: 0;
+				}
+			}
+		}
+	}
+
 	&::after {
 		content: '';
 		display: block;
@@ -73,7 +100,7 @@ section {
 	width: 45%;
 	padding: 10px 30px;
 	border-radius: 4px;
-	background: #f5f5f5;
+	// background: #f5f5f5;
 	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
 
 	&::after {
